@@ -1,0 +1,45 @@
+{
+  "name": "trello-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "taha7",
+  "license": "MIT",
+  "_moduleAliases": {
+    "@conf": "src/conf"
+  },
+  "scripts": {
+    "prod": "NODE_PATH=./build node build/index.js",
+    "build": "tsc -p .",
+    "dev": "nodemon src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "lint-and-fix": "eslint . --ext .ts --fix",
+    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/express": "^4.17.13",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.10.3",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^9.1.2",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "module-alias": "^2.2.2",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.38",
+    "winston": "^3.3.3"
+  }
+}
