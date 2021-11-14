@@ -13,7 +13,7 @@ class Logger {
   private consoleFormat(info: winston.Logform.TransformableInfo): string {
     return `[${moment(info.timestamp).format('YYYY-DD-MM hh:mm:ss')}] ${info.level}: ${
       info && info.message
-        ? typeof info && info.message === 'object'
+        ? typeof info.message === 'object'
           ? JSON.stringify(info.message, null, 2)
           : info.message
         : 'UNEXPECTED'
@@ -25,7 +25,7 @@ class Logger {
       (info.level == 'error' ? '❗ ' : '✅ ') + info.level
     }: ${
       info && info.message
-        ? typeof info && info.message === 'object'
+        ? typeof info.message === 'object'
           ? JSON.stringify(info.message, null, 2)
           : info.message
         : 'UNEXPECTED'
