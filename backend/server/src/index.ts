@@ -1,8 +1,8 @@
 import 'module-alias/register';
-import express, { Application, Request, Response } from 'express';
 import 'reflect-metadata';
-import logger from './services/app/logger';
+import express, { Application, Request, Response } from 'express';
 import { createConnection } from 'typeorm';
+import logger from '@app/services/app/logger';
 
 class App {
   private app: Application;

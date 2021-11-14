@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { Group } from './group';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm';
+import { Group } from '@app/entities/group';
+import { List } from '@app/entities/list';
 
 @Entity()
 export class Project {
@@ -8,6 +9,9 @@ export class Project {
 
   @ManyToOne(() => Group, (group) => group.projects)
   group: Group;
+
+  @OneToMany(() => List, (list) => list.project)
+  lists: List[];
 
   @Column('varchar')
   title: string;

@@ -1,7 +1,7 @@
 import winston, { Logger as WinstonLogger } from 'winston';
 import path from 'path';
 import moment from 'moment';
-import { logger } from '@conf/logger.conf';
+import { logger } from '@app/conf/logger.conf';
 
 class Logger {
   public logger: WinstonLogger;

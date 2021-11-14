@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Project } from './project';
+import { Project } from '@app/entities/project';
 
 @Entity()
 export class Group {

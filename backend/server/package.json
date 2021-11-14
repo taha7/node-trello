@@ -5,15 +5,15 @@
   "author": "taha7",
   "license": "MIT",
   "_moduleAliases": {
-    "@conf": "src/conf"
+    "@app": "src"
   },
   "scripts": {
     "prod": "NODE_PATH=./build node build/index.js",
     "build": "tsc -p .",
-    "dev": "nodemon src/index.ts",
+    "dev": "NODE_ENV=dev nodemon src/index.ts",
     "lint": "eslint . --ext .ts",
     "lint-and-fix": "eslint . --ext .ts --fix",
-    "test": "mocha -r ts-node/register tests/**/*.spec.ts"
+    "test": "NODE_ENV=test mocha --check-leaks -r ts-node/register -r tsconfig-paths/register \"tests/**/*.spec.ts\""
   },
   "devDependencies": {
     "@types/chai": "^4.2.22",
@@ -31,6 +31,7 @@
     "nodemon": "^2.0.13",
     "prettier": "^2.4.1",
     "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.3"
   },
   "dependencies": {
